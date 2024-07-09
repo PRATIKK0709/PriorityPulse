@@ -1,0 +1,333 @@
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4cc9f0;
+    --background-color: #f8f9fa;
+    --text-color: #212529;
+    --light-text: #6c757d;
+    --delete-color: #e63946;
+    --success-color: #2ecc71;
+}
+
+body.dark-mode {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --light-text: #bbbbbb;
+    --delete-color: #ff6b6b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .container {
+    background-color: #1e1e1e;
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+body.dark-mode h1 {
+    color: var(--accent-color);
+}
+
+#todo-form {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+#todo-input {
+    flex-grow: 1;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid var(--accent-color);
+    border-radius: 8px 0 0 8px;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode #todo-input {
+    background-color: #333;
+    color: var(--text-color);
+    border-color: var(--accent-color);
+}
+
+#todo-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.3);
+}
+
+body.dark-mode #todo-input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(76, 201, 240, 0.3);
+}
+
+#add-button {
+    padding: 15px 30px;
+    font-size: 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#add-button:hover {
+    background-color: var(--secondary-color);
+}
+
+#todo-list {
+    list-style-type: none;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .todo-item {
+    background-color: #333;
+}
+
+.todo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.todo-item input[type="checkbox"] {
+    margin-right: 15px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.todo-item .todo-text {
+    flex-grow: 1;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    word-break: break-word;
+}
+
+body.dark-mode .todo-item .todo-text {
+    color: var(--text-color);
+}
+
+.todo-item .delete-btn {
+    color: var(--delete-color);
+    cursor: pointer;
+    font-size: 24px;
+    transition: color 0.3s ease;
+    margin-left: 15px;
+}
+
+body.dark-mode .todo-item .delete-btn {
+    color: var(--delete-color);
+}
+
+.todo-item .delete-btn:hover {
+    color: #c0392b;
+}
+
+body.dark-mode .todo-item .delete-btn:hover {
+    color: #ff4444;
+}
+
+.completed .todo-text {
+    text-decoration: line-through;
+    color: var(--light-text);
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.action-button {
+    padding: 12px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.progress-container {
+width: 100%;
+height: 10px;
+background-color: #e0e0e0;
+border-radius: 5px;
+margin-bottom: 20px;
+}
+
+.progress-bar {
+height: 100%;
+background-color: var(--success-color);
+border-radius: 5px;
+transition: width 0.3s ease;
+}
+
+body.dark-mode .progress-container {
+background-color: #444;
+}
+
+#clear-completed {
+    background-color: var(--delete-color);
+    color: white;
+}
+
+#clear-completed:hover {
+    background-color: #c0392b;
+}
+
+#save-list {
+    background-color: var(--success-color);
+    color: white;
+}
+
+#save-list:hover {
+    background-color: #27ae60;
+}
+
+#todo-count {
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+    color: var(--light-text);
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    margin: 5px;
+    padding: 8px 16px;
+    border: none;
+    background-color: transparent;
+    color: var(--light-text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+body.dark-mode .filter-btn {
+    color: var(--light-text);
+}
+
+body.dark-mode .filter-btn.active {
+    background-color: var(--secondary-color);
+}
+
+/* Dark mode toggle styles */
+.dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--light-text);
+}
+
+body.dark-mode .dark-mode-toggle {
+    color: var(--accent-color);
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #todo-form {
+        flex-direction: column;
+    }
+
+    #todo-input {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    #add-button {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .todo-item {
+        padding: 15px;
+    }
+
+    .todo-item .todo-text {
+        font-size: 16px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filter-btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
